@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "750458988224",
+    "project_id": "projeto-epp",
+    "storage_bucket": "projeto-epp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750458988224:android:53375cc4e06b89e2e26f25",
+        "android_client_info": {
+          "package_name": "com.example.epp_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750458988224-r1ock7c3ipo325ea6o5ftcch2jge2t52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq-jiD02IVSbCq2HP-I91XBXfKpwRgtl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750458988224-r1ock7c3ipo325ea6o5ftcch2jge2t52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
