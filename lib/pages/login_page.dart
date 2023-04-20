@@ -2,290 +2,375 @@
 
 import 'package:epp_demo/pages/cadastro_page.dart';
 import 'package:epp_demo/pages/homepages/home_page.dart';
+import 'package:epp_demo/pages/senha_reset.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sizer/sizer.dart';
 
 class LoginPage extends StatelessWidget {
 
   final myController = TextEditingController();
 
+  final snackbar = SnackBar(
+    content: Text("Usário logado com sucesso!"),
+    backgroundColor: Color.fromARGB(255, 88, 39, 125),
+    );
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.black,
-        child: ListView(
-         children: [
-          Container(
-             padding: EdgeInsets.only(
-              top: 60,
-              left: 40,
-              right: 40,
-            ),
-            child: SizedBox(
-                width: 100,
-                height: 100,
-                child: Image.asset("assets/img/Logo.png"),
+    return Sizer(
+      builder:(context, orientation, deviceType) {
+      return Scaffold(
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          color: Colors.black,
+          child: ListView(
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                top: 60,
+                left: 40,
+                right: 40,
               ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              top: 45,
-              left: 40,
-              right: 40,
+              child: SizedBox(
+                  width: 40.h,
+                  height: 40.w,
+                  child: Image.asset("assets/img/Logo.png"),
+                ),
             ),
-            child: Text(
-            "Bem-vindo(a)!",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              fontFamily: 'Varela Round',
-             ),
-            textAlign: TextAlign.left,
+            SizedBox(
+              height: 10,
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              left: 40,
-              right: 40,
-            ),
-            child: Text(
-            "Faça login para ter acesso as atividades e conteúdos do app.",
-            style: TextStyle(
-              color: Color(0xFFCCB9B9),
-              fontSize: 18,
-              fontFamily: 'Varela Round',
-             ),
-            textAlign: TextAlign.left,
-            ),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-          Container(
-            height: 370,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(41),
+            Container(
+              padding: EdgeInsets.only(
+                top: 45,
+                left: 40,
+                right: 40,
               ),
-              color: Color(0xFF72399D),
+              child: Text(
+              "Bem-vindo(a) ao E++",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22.sp,
+                fontFamily: 'Varela Round',
+              ),
+              textAlign: TextAlign.left,
+              ),
             ),
-            child: Column(
+            Container(
+              padding: EdgeInsets.only(
+                left: 40,
+                right: 40,
+              ),
+              child: Text(
+              "Faça login ou cadastre-se para ter acesso as atividades e conteúdos do app.",
+              style: TextStyle(
+                color: Color(0xFFCCB9B9),
+                fontSize: 16.sp,
+                fontFamily: 'Varela Round',
+              ),
+              textAlign: TextAlign.left,
+              ),
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            //caixa roxa de login
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 25,
-                ),
                 Container(
-                  width: 330,
-                  height: 53,
-                  child: TextFormField(
-                    controller: myController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      labelText: " E-mail ou usuário",
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      labelStyle: TextStyle(
-                        fontFamily: 'Varela Round',
-                        color: Color(0xFF5F1796),
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                      ),
+                  padding: EdgeInsets.only(top: 10),
+                  height: 70.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(41),
                     ),
-                    style: TextStyle(
-                      fontSize: 18,
-                      ),
+                    color: Color(0xFF72399D),
                   ),
-                ),
-                SizedBox(
-                  height: 18,
-                ),
-                Container(
-                  width: 330,
-                  height: 50,
-                  child: TextFormField(
-                    keyboardType: TextInputType.text,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(40),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 25,
                       ),
-                      labelText: " Senha",
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      labelStyle: TextStyle(
-                        fontFamily: 'Varela Round',
-                        color: Color(0xFF5F1796),
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                      Container(
+                        width: 93.w,
+                        height: 6.4.h,
+                        child: TextFormField(
+                          controller: myController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            labelText: " E-mail ou usuário",
+                            floatingLabelBehavior: FloatingLabelBehavior.never,
+                            labelStyle: TextStyle(
+                              fontFamily: 'Varela Round',
+                              color: Color(0xFF5F1796),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14.sp,
+                            ),
+                            prefixIcon: Padding(
+                              padding: EdgeInsets.only(bottom: 2, left: 10),
+                              child: Icon(
+                                Icons.person,
+                                color: Color(0xFF5F1796),
+                              ),
+                            ),
+                          ),
+                          style: TextStyle(
+                            fontSize: 17,
+                            ),
+                        ),
                       ),
-                    ),
-                    style: TextStyle(
-                      fontSize: 18,
+                      SizedBox(
+                        height: 18,
                       ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  width: 180,
-                  height: 43,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF330E50),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(40)
+                      Container(
+                        width: 94.w,
+                        height: 6.3.h,
+                        child: TextFormField(
+                          keyboardType: TextInputType.text,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(40),
+                            ),
+                            labelText: " Senha",
+                            floatingLabelBehavior: FloatingLabelBehavior.never,
+                            labelStyle: TextStyle(
+                              fontFamily: 'Varela Round',
+                              color: Color(0xFF5F1796),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14.sp,
+                            ),
+                            prefixIcon: Padding(
+                              padding: EdgeInsets.only(bottom: 2, left: 10),
+                              child: Icon(
+                                Icons.lock,
+                                color: Color(0xFF5F1796),
+                              ),
+                            ),
+                          ),
+                          style: TextStyle(
+                            fontSize: 18,
+                            ),
+                        ),
                       ),
-                    ),
-                  child: SizedBox(
-                      child: (
-                        TextButton(
+                      SizedBox(
+                        height: 3,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 190),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              TextButton(
+                                child: 
+                                Text(
+                                  "Esqueceu a senha?",
+                                  style: TextStyle(
+                                  color: Colors.white70,
+                                  fontFamily: 'Varela Round',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600
+                                ),
+                                textAlign: TextAlign.right,
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SenhaReset(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: 330,
+                        height: 42,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF330E50),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(40)
+                            ),
+                          ),
+                        child: SizedBox(
+                            child: (
+                              TextButton(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      "Entrar",
+                                      style: TextStyle(
+                                        color: Color(0xFFBFB9B9),
+                                        fontFamily: 'Varela Round',
+                                        fontSize: 24,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
+                                onPressed: () {
+                                  ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HomePage(),
+                                    ),
+                                  );
+                                },
+                              )
+                            ),
+                          ),
+                      ),
+                        SizedBox(
+                          height: 45,
+                        ),
+                        SizedBox(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Ainda não possui uma conta?",
+                                style: TextStyle(
+                                  color: Color(0xFFF1E2E2),
+                                  fontFamily: 'Varela Round',
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w600
+                                ),
+                              ),
+                              TextButton(
+                                child: 
+                                Text(
+                                  "Cadastre-se",
+                                  style: TextStyle(
+                                  color: Color(0xFF220339),
+                                  fontFamily: 'Varela Round',
+                                  fontSize: 13.5.sp,
+                                  fontWeight: FontWeight.bold
+                                ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CadastroPage(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                        children: [
+                          Expanded(
+                              child: Divider(
+                              thickness: 0.5,
+                              color: Color(0xFF330E50),
+                              )
+                           ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Text(
+                              'Ou entre com',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Varela Round',
+                                fontSize: 12.5.sp,
+                              )
+                            ),
+                          ),
+                          Expanded(
+                              child: Divider(
+                              thickness: 0.5,
+                              color: Color(0xFF330E50),
+                              )
+                          ),
+                        ],
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        SizedBox(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Text(
-                                "Entrar",
-                                style: TextStyle(
-                                  color: Color(0xFFBFB9B9),
-                                  fontFamily: 'Varela Round',
-                                  fontSize: 24,
+                              InkWell(
+                                onTap:() {},
+                                child: FaIcon(
+                                  FontAwesomeIcons.facebook,
+                                  color: Color(0xFF330E50),
+                                  size: 25.sp,
                                 ),
-                                textAlign: TextAlign.center,
+                              ),
+                              InkWell(
+                                onTap:() {},
+                                child: FaIcon(
+                                  FontAwesomeIcons.google,
+                                  color: Color(0xFF330E50),
+                                  size: 25.sp,
+                                ),
                               ),
                             ],
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ),
-                            );
-                          },
-                        )
-                      ),
-                    ),
-                ),
-                  SizedBox(
-                    height: 2,
-                  ),
-                  SizedBox(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Ainda não possui uma conta?",
-                          style: TextStyle(
-                            color: Color(0xFFF1E2E2),
-                            fontFamily: 'Varela Round',
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600
-                          ),
                         ),
-                        TextButton(
-                          child: 
+                        SizedBox(
+                          height: 25,
+                        ),
+                        SizedBox(
+                          child:
+                            Text(
+                              "Ao criar uma conta você concorda com os nossos",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Varela Round',
+                                fontSize: 11.5.sp,
+                                fontWeight: FontWeight.w600
+                              ),
+                            ),
+                        ),
+                    TextButton(
+                        child: 
                           Text(
-                            "Cadastre-se",
+                            "Termos de Uso",
                             style: TextStyle(
-                             color: Color(0xFF220339),
-                             fontFamily: 'Varela Round',
-                             fontSize: 16,
-                             fontWeight: FontWeight.bold
-                           ),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => CadastroPage(),
-                              ),
-                            );
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Ou entre com:",
-                          style: TextStyle(
-                            color: Color(0xFFF1E2E2),
-                            fontFamily: 'Varela Round',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 7,
-                  ),
-                  SizedBox(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(17)
+                              color: Color.fromARGB(255, 215, 171, 246),
+                              fontFamily: 'Varela Round',
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.bold
                             ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black38,
-                                offset: Offset(
-                                  0.0,
-                                  0.0
-                                ),
-                                spreadRadius: 1.0,
-                                blurRadius: 4.0
-                              ),
-                            ],
                           ),
-                          height: 36,
-                          width: 36,
-                          child: Image.asset("assets/img/facebook.png"),
-                          ),
-                          Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(30)
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black26,
-                                offset: Offset(
-                                  0.0,
-                                  0.0
-                                ),
-                                spreadRadius: 1.0,
-                                blurRadius: 2.0
-                              ),
-                            ],
-                          ),
-                          height: 36,
-                          width: 36,
-                          child: Image.asset("assets/img/google.png"),
-                          ),
-                      ],
-                    ),
+                            onPressed: () {},
+                      ),
+                    ],
                   ),
+                ),
               ],
             ),
+          ],
           ),
-         ],
         ),
-      ),
+      );
+      },
     );
   }
 }

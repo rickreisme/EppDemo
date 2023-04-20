@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:epp_demo/pages/homepages/colegas.dart';
-import 'package:epp_demo/pages/homepages/configs.dart';
 import 'package:epp_demo/pages/homepages/lista_de_estudos.dart';
 import 'package:epp_demo/pages/homepages/ranking.dart';
 import 'package:epp_demo/pages/perfil.dart';

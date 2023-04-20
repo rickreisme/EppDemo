@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:html';
-
-import 'package:epp_demo/pages/homepages/configs.dart';
-import 'package:epp_demo/pages/perfil.dart';
+import 'package:epp_demo/pages/configs.dart';
+import 'package:epp_demo/pages/notifications.dart';
 import 'package:flutter/material.dart';
 
 class HomePageMaterias extends StatelessWidget {
@@ -14,45 +12,57 @@ class HomePageMaterias extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
+        width: double.infinity,
         padding: EdgeInsets.only(top: 10, left: 20, right: 20),
         child: ListView(
           children: [
-        /*IconButton(
-              alignment: Alignment.topLeft,
-              icon: Icon(Icons.arrow_back),
-              color: Colors.white,
-              onPressed:() => Navigator.pop(context, false),
-          ), */
             Row(
                mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
+                  padding: EdgeInsets.only(top: 10),
                   child: Text(
                     "Matérias",
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'Varela Round',
-                      fontSize: 40,
+                      fontSize: 33,
                       fontWeight: FontWeight.w400
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 SizedBox(
-                  width: 20,
-                ),
-                SizedBox(
-                  height: 55,
-                  width: 55,
-                  child: Image.asset("assets/img/notification.png")
+                  width: 30,
                 ),
                 IconButton(
-                  alignment: Alignment.topLeft,
                   color: Color(0xFF5F1796),
                   icon: SizedBox(
-                    height: 45,
-                    width: 45,
-                    child: ImageIcon(AssetImage('assets/img/settings.png')),
+                  height: 55,
+                  width: 55,
+                    child: Icon(
+                      Icons.notifications,
+                      size: 40,
+                    ),
+                  ),
+                  onPressed:() {
+                    Navigator.push(
+                      context,
+                        MaterialPageRoute(
+                        builder: (context) => NotificationPage(),
+                        ),
+                      );
+                  }, 
+                ),
+                IconButton(
+                  color: Color(0xFF5F1796),
+                  icon: SizedBox(
+                    height: 41,
+                    width: 41,
+                    child: Icon(
+                        Icons.settings,
+                        size: 40,
+                      ),
                   ),
                   onPressed: (){
                     Navigator.push(
@@ -63,14 +73,18 @@ class HomePageMaterias extends StatelessWidget {
                     );
                   },
                 ),
+                SizedBox(
+                  width: 10,
+                ),
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       padding: EdgeInsets.only(top: 8),
@@ -89,40 +103,14 @@ class HomePageMaterias extends StatelessWidget {
                       ),
                       child: TextButton(
                         onPressed: (){},
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: Text(
-                              "Lógica",
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontFamily: 'Varela Round',
-                                  color: Colors.white
-                                ),
-                              ),
+                        child: Text(
+                          "Lógica e Algoritmo",
+                            style: TextStyle(
+                            fontSize: 22,
+                            fontFamily: 'Varela Round',
+                            color: Colors.white
                             ),
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                width: 500,
-                                padding: EdgeInsets.only(left: 5, right: 5),
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF7E32B9),
-                                   borderRadius: BorderRadius.circular(15)
-                                ),
-                                child: Text(
-                                "Algoritmo",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'Varela Round',
-                                    color: Colors.white
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                          ],
+                          textAlign: TextAlign.center,
                         ),
                       )
                     ),
@@ -134,7 +122,7 @@ class HomePageMaterias extends StatelessWidget {
                       width: 122,
                       height: 82,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 88, 39, 125),
+                        color: Color.fromRGBO(98, 54, 131, 0),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
@@ -146,41 +134,340 @@ class HomePageMaterias extends StatelessWidget {
                       ),
                       child: TextButton(
                         onPressed: (){},
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: Text(
-                              "Lógica",
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontFamily: 'Varela Round',
-                                  color: Colors.white
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                width: 500,
-                                padding: EdgeInsets.only(left: 5, right: 5),
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF7E32B9),
-                                   borderRadius: BorderRadius.circular(15)
-                                ),
+                          child: Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 5),
                                 child: Text(
-                                "Algoritmo",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'Varela Round',
-                                    color: Colors.white
-                                  ),
+                                  "Estrutura\nBásica",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontFamily: 'Varela Round',
+                                      color: Color.fromRGBO(255, 255, 255, 0.5)
+                                    ),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
+                              SizedBox(
+                                width: 500,
+                                height: 500,
+                                child: Icon(
+                                  Icons.lock,
+                                  color: Colors.amberAccent,
+                                  size: 50,
+                                ),
+                              ),
+                            ],
+                          )
+                      )
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 8),
+                      width: 122,
+                      height: 82,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(98, 54, 131, 0),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF3A224B),
+                            spreadRadius: 2,
+                            offset: Offset(-2, 0)
+                          )
+                        ]
+                      ),
+                      child: TextButton(
+                        onPressed: (){},
+                        child: Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 10, left: 2),
+                                child: Text(
+                                  "Variáveis",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontFamily: 'Varela Round',
+                                      color: Color.fromRGBO(255, 255, 255, 0.5)
+                                    ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 500,
+                                height: 500,
+                                child: Icon(
+                                  Icons.lock,
+                                  color: Colors.amberAccent,
+                                  size: 50,
+                                ),
+                              ),
+                            ],
+                          )
+                      )
+                    ),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 10),
+                      width: 122,
+                      height: 82,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(98, 54, 131, 0),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF3A224B),
+                            spreadRadius: 2,
+                            offset: Offset(-2, 0)
+                          )
+                        ]
+                      ),
+                      child: TextButton(
+                        onPressed: (){},
+                        child: Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 8),
+                                child: Text(
+                                  "Operadores",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: 'Varela Round',
+                                      color: Color.fromRGBO(255, 255, 255, 0.5)
+                                    ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 500,
+                                height: 500,
+                                child: Icon(
+                                  Icons.lock,
+                                  color: Colors.amberAccent,
+                                  size: 50,
+                                ),
+                              ),
+                            ],
+                          )
+                      )
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 8),
+                      width: 122,
+                      height: 82,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(98, 54, 131, 0),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF3A224B),
+                            spreadRadius: 2,
+                            offset: Offset(-2, 0)
+                          )
+                        ]
+                      ),
+                      child: TextButton(
+                        onPressed: (){},
+                        child: Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 10),
+                                child: Text(
+                                  "Estruturas\nCondicionais",
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontFamily: 'Varela Round',
+                                      color: Color.fromRGBO(255, 255, 255, 0.5)
+                                    ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 500,
+                                height: 500,
+                                child: Icon(
+                                  Icons.lock,
+                                  color: Colors.amberAccent,
+                                  size: 50,
+                                ),
+                              ),
+                            ],
+                          )
+                      )
+                    ),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 8),
+                      width: 122,
+                      height: 82,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(98, 54, 131, 0),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF3A224B),
+                            spreadRadius: 2,
+                            offset: Offset(-2, 0)
+                          )
+                        ]
+                      ),
+                      child: TextButton(
+                        onPressed: (){},
+                        child: Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 10),
+                                child: Text(
+                                  "Estruturas\nde repetição",
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontFamily: 'Varela Round',
+                                      color: Color.fromRGBO(255, 255, 255, 0.5)
+                                    ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 500,
+                                height: 500,
+                                child: Icon(
+                                  Icons.lock,
+                                  color: Colors.amberAccent,
+                                  size: 50,
+                                ),
+                              ),
+                            ],
+                          )
+                      )
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 8),
+                      width: 122,
+                      height: 82,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(98, 54, 131, 0),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF3A224B),
+                            spreadRadius: 2,
+                            offset: Offset(-2, 0)
+                          )
+                        ]
+                      ),
+                      child: TextButton(
+                        onPressed: (){},
+                        child: Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 10, left: 10),
+                                child: Text(
+                                  "Vetores",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontFamily: 'Varela Round',
+                                      color: Color.fromRGBO(255, 255, 255, 0.5)
+                                    ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 500,
+                                height: 500,
+                                child: Icon(
+                                  Icons.lock,
+                                  color: Colors.amberAccent,
+                                  size: 50,
+                                ),
+                              ),
+                            ],
+                          )
+                      )
+                    ),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 8),
+                      width: 122,
+                      height: 82,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(98, 54, 131, 0),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF3A224B),
+                            spreadRadius: 2,
+                            offset: Offset(-2, 0)
+                          )
+                        ]
+                      ),
+                      child: TextButton(
+                        onPressed: (){},
+                        child: Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 10, left: 5),
+                                child: Text(
+                                  "Matrizes",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontFamily: 'Varela Round',
+                                      color: Color.fromRGBO(255, 255, 255, 0.5)
+                                    ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 500,
+                                height: 500,
+                                child: Icon(
+                                  Icons.lock,
+                                  color: Colors.amberAccent,
+                                  size: 50,
+                                ),
+                              ),
+                            ],
+                          )
                       )
                     ),
                   ],

@@ -1,6 +1,9 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class Cadastro2Page extends StatelessWidget {
 
@@ -85,7 +88,7 @@ class Cadastro2Page extends StatelessWidget {
               height: 45,
             ),
               SizedBox(
-                  height: 50,
+                  height: 45,
                   child: TextFormField(
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
@@ -100,7 +103,14 @@ class Cadastro2Page extends StatelessWidget {
                             fontFamily: 'Varela Round',
                             color: Color(0xFF5F1796),
                             fontWeight: FontWeight.w600,
-                            fontSize: 19,
+                            fontSize: 15.sp,
+                          ),
+                          prefixIcon: Padding(
+                            padding: EdgeInsets.only(bottom: 2, left: 10),
+                            child: Icon(
+                              Icons.person_pin,
+                              color: Color(0xFF5F1796),
+                            ),
                           ),
                         ),
                         style: TextStyle(
@@ -109,10 +119,10 @@ class Cadastro2Page extends StatelessWidget {
                       ),
                ),
             SizedBox(
-              height: 25,
+              height: 18,
             ),
               SizedBox(
-                  height: 50,
+                  height: 45,
                   child: TextFormField(
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
@@ -127,7 +137,14 @@ class Cadastro2Page extends StatelessWidget {
                             fontFamily: 'Varela Round',
                             color: Color(0xFF5F1796),
                             fontWeight: FontWeight.w600,
-                            fontSize: 19,
+                            fontSize: 15.sp,
+                          ),
+                          prefixIcon: Padding(
+                            padding: EdgeInsets.only(bottom: 2, left: 10),
+                            child: Icon(
+                              Icons.school,
+                              color: Color(0xFF5F1796),
+                            ),
                           ),
                         ),
                         style: TextStyle(
@@ -136,10 +153,10 @@ class Cadastro2Page extends StatelessWidget {
                       ),
                ),
             SizedBox(
-              height: 25,
+              height: 18,
             ),
               SizedBox(
-                  height: 50,
+                  height: 45,
                   child: TextFormField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -154,7 +171,14 @@ class Cadastro2Page extends StatelessWidget {
                             fontFamily: 'Varela Round',
                             color: Color(0xFF5F1796),
                             fontWeight: FontWeight.w600,
-                            fontSize: 19,
+                            fontSize: 15.sp,
+                          ),
+                          prefixIcon: Padding(
+                            padding: EdgeInsets.only(bottom: 2, left: 10),
+                            child: Icon(
+                              Icons.calendar_month,
+                              color: Color(0xFF5F1796),
+                            ),
                           ),
                         ),
                         style: TextStyle(
@@ -167,7 +191,7 @@ class Cadastro2Page extends StatelessWidget {
               ),
               Container(
                     width: 250,
-                    height: 43,
+                    height: 5.5.h,
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 108, 14, 180),
                       borderRadius: BorderRadius.all(
@@ -202,11 +226,42 @@ class Cadastro2Page extends StatelessWidget {
                               ),
                             ],
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pop(context, false);
+                          },
                         )
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                        SizedBox(
+                          child:
+                              Text(
+                                "Criando uma conta você concorda com os nossos",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Varela Round',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w600
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                          ),
+                            TextButton(
+                              child: 
+                                Text(
+                                  "Termos de Uso",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 215, 171, 246),
+                                    fontFamily: 'Varela Round',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w600
+                                  ),
+                                ),
+                                  onPressed: () {},
+                            ),     
           ],
         ),
       ),
